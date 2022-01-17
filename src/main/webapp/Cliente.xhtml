@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h:form>
+	    <p:panel header="Cabecera de panel" footer="Pie de Panel">
+	    	<p:panelGrid columns="2">
+			<p:outputLabel value="Nombre"></p:outputLabel>
+			<p:inputText value="#{clienteView.cliente.nombres}"></p:inputText>
+			<p:outputLabel value="Apellido"></p:outputLabel>
+			<p:inputText value="#{clienteView.cliente.apellidos}"></p:inputText>
+			<p:outputLabel value="Identificacion"></p:outputLabel>
+			<p:inputText value="#{clienteView.cliente.identificacion}"></p:inputText>
+			<p:outputLabel value="Direccion"></p:outputLabel>
+			<p:inputText value="#{clienteView.cliente.direccion}"></p:inputText>
+			</p:panelGrid>
+			<p:commandButton value="Guardar" action="#{clienteView.insertar}"></p:commandButton>
+	    </p:panel>
+    </h:form>
+    <p:panel>
+    	<p:dataTable lazy="null">
+    		<p:column headerText="Id Cliente "></p:column>
+    		<p:column headerText="Nombre "></p:column>
+    		<p:column headerText="Apellido"></p:column>
+    		<p:column headerText="Identificacion"></p:column>
+    		<p:column headerText="Direccion "></p:column>
+    		<p:column headerText="Telefono "></p:column>
+    		<p:column headerText="Id Cliente "></p:column>
+    	</p:dataTable>
+    </p:panel>
+</h:body>
+</html>
