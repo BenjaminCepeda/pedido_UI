@@ -35,7 +35,7 @@ public class EmpleadoDaoImpl extends GenericDaoImpl<Empleado> implements  Emplea
 	@Override
 	public List<Empleado> listar() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.findAll();
 	}
 
 }

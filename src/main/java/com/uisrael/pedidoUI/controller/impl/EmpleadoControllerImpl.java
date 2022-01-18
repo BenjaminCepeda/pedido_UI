@@ -32,7 +32,7 @@ public class EmpleadoControllerImpl implements EmpleadoController {
 	@Override
 	public List<Empleado> listar() {
 		// TODO Auto-generated method stub
-		return null;
+		return empleadoDao.listar();
 	}
 
 }

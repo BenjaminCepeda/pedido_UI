@@ -19,6 +19,9 @@ public abstract class GenericDaoImpl <T>  implements GenericDao <T>{
 	private Class<T> entityClass;
 	
 	public GenericDaoImpl() {
+		Type t = getClass().getGenericSuperclass();
+        ParameterizedType pt = (ParameterizedType) t;
+        entityClass = (Class<T>) pt.getActualTypeArguments()[0];		
 		entityManager = emf.createEntityManager();//crear conexion
 	}
 
