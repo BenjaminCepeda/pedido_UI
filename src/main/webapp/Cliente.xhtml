@@ -1,64 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<title>Insert title here</title>
+	<title>Insert title here</title>
 </h:head>
 <h:body>
 	<h:form id="frmCliente">
 		<p:growl id="mensaje" showDetail="true"></p:growl>
-        <p:toolbarGroup>
-            <p:commandButton type="button" value="New" icon="pi pi-file" styleClass="p-mr-2" />
-            <p:commandButton type="button" value="Open" icon="pi pi-folder-open" styleClass="ui-button-success" />
-            <p:commandButton type="button" title="Save" icon="pi pi-save" styleClass="ui-button-help p-mr-2" />
-        </p:toolbarGroup>
+		<p:toolbarGroup>
+			<p:commandButton type="button" value="New" icon="pi pi-file"
+				styleClass="p-mr-2" />
+			<p:commandButton type="button" value="Open" icon="pi pi-folder-open"
+				styleClass="ui-button-success" />
+			<p:commandButton type="button" title="Save" icon="pi pi-save"
+				styleClass="ui-button-help p-mr-2" />
+		</p:toolbarGroup>
 
-            		
-	    <p:panel header="Cabecera de panel" footer="Pie de Panel">
-	    	<p:panelGrid columns="4">
-			<p:outputLabel value="Nombre"></p:outputLabel>
-			<p:inputText value="#{clienteView.cliente.nombres}"></p:inputText>
-			<p:outputLabel value="Apellido"></p:outputLabel>
-			<p:inputText value="#{clienteView.cliente.apellidos}"></p:inputText>
-			<p:outputLabel value="Identificacion"></p:outputLabel>
-			<p:inputText value="#{clienteView.cliente.identificacion}"></p:inputText>
-			<p:outputLabel value="Direccion"></p:outputLabel>
-			<p:inputText value="#{clienteView.cliente.direccion}"></p:inputText>
-			<p:outputLabel value="Telefono"></p:outputLabel>
-			<p:inputText value="#{clienteView.cliente.telefono}"></p:inputText>
+
+		<p:panel header="Cabecera de panel" footer="Pie de Panel">
+			<p:panelGrid columns="4">
+				<p:outputLabel value="Nombre"></p:outputLabel>
+				<p:inputText value="#{clienteView.cliente.nombres}"></p:inputText>
+				<p:outputLabel value="Apellido"></p:outputLabel>
+				<p:inputText value="#{clienteView.cliente.apellidos}"></p:inputText>
+				<p:outputLabel value="Identificacion"></p:outputLabel>
+				<p:inputText value="#{clienteView.cliente.identificacion}"></p:inputText>
+				<p:outputLabel value="Direccion"></p:outputLabel>
+				<p:inputText value="#{clienteView.cliente.direccion}"></p:inputText>
+				<p:outputLabel value="Telefono"></p:outputLabel>
+				<p:inputText value="#{clienteView.cliente.telefono}"></p:inputText>
 			</p:panelGrid>
 			<p:commandButton value="Guardar" action="#{clienteView.insertar}"></p:commandButton>
-	    </p:panel>
-    </h:form>
-    <p:panel>
-    	<p:dataTable id="dt_Clientes" lazy="null" widgetVar="dtClientes" value="#{clienteView.listaClientes}" 
-    		var="cliente"  rowkey="#{cliente.idCliente}" paginator="true" paginatorPosition="bottom" rows="25">
-   		
-    		<p:column headerText="Id Cliente" sortBy="#{cliente.idCliente}">
-    			<p:outputLabel value="#{cliente.idCliente}"></p:outputLabel>
-    		</p:column>
-    		<p:column headerText="Nombre" sortBy="#{cliente.nombres}">
-    			<p:outputLabel value="#{cliente.nombres}"></p:outputLabel>
-    		</p:column>
-    		<p:column headerText="Apellido" filterBy="#{cliente.apellidos}">
-    			<p:outputLabel value="#{cliente.apellidos}"></p:outputLabel>
-    		</p:column>
-    		<p:column headerText="Identificacion" filterBy="#{cliente.identificacion}">
-    			<p:outputLabel value="#{cliente.identificacion}"></p:outputLabel>    		
-    		</p:column>
-    		<p:column headerText="Direccion ">
-    			<p:outputLabel value="#{cliente.direccion}"></p:outputLabel>    		    		
-    		</p:column>
-    		<p:column headerText="Telefono ">
-    			<p:outputLabel value="#{cliente.telefono}"></p:outputLabel>    		
-    		</p:column>
-    		<p:column headerText="Estado registro">
-    			<p:outputLabel value="#{cliente.estadoRegistro}"></p:outputLabel>    		
-    		</p:column>
-    	</p:dataTable>
-    </p:panel>
+		</p:panel>
+		<p:panel>
+			<p:dataTable id="dtClientes" lazy="null" widgetVar="dtClientes"
+				value="#{clienteView.listaClientes}" var="cliente"
+				rowkey="#{cliente.idCliente}" paginator="true"
+				paginatorPosition="bottom" rows="25">
+
+				<p:column headerText="Id Cliente" sortBy="#{cliente.idCliente}">
+					<p:outputLabel value="#{cliente.idCliente}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Nombre" sortBy="#{cliente.nombres}">
+					<p:outputLabel value="#{cliente.nombres}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Apellido" filterBy="#{cliente.apellidos}">
+					<p:outputLabel value="#{cliente.apellidos}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Identificacion"
+					filterBy="#{cliente.identificacion}">
+					<p:outputLabel value="#{cliente.identificacion}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Direccion ">
+					<p:outputLabel value="#{cliente.direccion}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Telefono ">
+					<p:outputLabel value="#{cliente.telefono}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Estado registro">
+					<p:outputLabel value="#{cliente.estadoRegistro}"></p:outputLabel>
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
 </h:body>
 </html>
